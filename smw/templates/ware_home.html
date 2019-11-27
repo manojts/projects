@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<html>
+<head>
+	<title>P</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+	
+</head>
+<body>
+
+{% block content %}
+<br><br><br>
+<center><h3>Ware-house Location : {{ single_ware.ware_place }}</h3></center>
+	<br><br>
+   <center> <a href="{% url 'ware_details' 1 single_ware.id%}" class="btn btn-primary" style="height: 100px; width: 300px; font-size:40px;text-align:middle;background-color:darkred">Trucks</a><&nbsp>	
+	<a href="{% url 'ware_details' 2 single_ware.id%}" class="btn btn-primary" style="height: 100px; width: 300px; font-size:40px;background-color:darkred">Items</center></a><br><br>
+	<br><br>
+	<center><a href="{% url 'ware_details' 3 single_ware.id%}" class="btn btn-primary" style="height: 100px; width: 300px; font-size:40px;background-color:darkred">Customers</center></a><br><br>
+	<center><a href="{% url 'home' %}" button type="submit" class="btn_btn-primary">Logout</button></a>
+
+	{% endblock %}	
+

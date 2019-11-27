@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SMW</title>
+</head>
+<body>
+{% block content %}
+<center>
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<centre><h1>Item Update</h1></centre>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+   	<b>Customer Name:</b> {{cust.cust_name}}<br><br>
+	<div class='form-group'>
+
+		<label for='id_i_Id'>Item</label>
+		
+		<select id='id_i_id' name='i_id'>
+			{% for i in i_list %}
+		  		<option value= "{{ i.id }}">{{ i.item_name }} Rs.{{ i.item_price }}</option>
+			{% endfor %}
+		
+	</div>
+
+	<div class='form-group'>
+		<label for='id_i_unique'>Enter the quantity</label>
+		<input type='number' class='form-control' id='id_i_unique' name='i_unique'>
+	</div>
+
+	<center><button type="submit" class="btn btn-success">Add item</button>
+	</form><br><br>
+	<b>Total Price :</b> {{ final_total }}
+	<br>
+
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+<center><a href="{%url 'sell_billing' pk_t cust.id final_total %}"><button type="submit" class="btn btn-success">Generate bill</button></a><br><br><br>
+
+{% endblock %}
+</body>
+</html>

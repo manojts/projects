@@ -1,0 +1,186 @@
+	{% extends 'base.html' %}
+{% load static %}
+<html>
+
+{% block breadcrumb %}
+<li class="breadcrumb-items active">Departments</li>
+{% endblock %}
+
+
+	
+
+
+{% block content %}
+	<head>
+		<h1 style="color:#bec22f;"><center><b>ಕರ್ನಾಟಕ ರಾಜ್ಯ ಸರ್ಕಾರ</b></center></h1>
+		
+<style type="text/css">
+#watermark0 {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:0px;
+  top:0px;
+}
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:380px;
+  top:400px;
+}
+#watermark1 {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:-114px;
+  top:-30px;
+}
+#watermark2 {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:890px;
+  top:-30px;
+}
+#watermark3 {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:-50px;
+  top:930px;
+}
+#watermark4 {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:835px;
+  top:930px;
+}
+#watermark5 {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:375px;
+  top:900px;
+}
+</style>
+
+		
+	</head><br>
+	<center>
+		<div>
+  			<img src="static\img\ke.jpg"  style="height: 100px; width: 100px;"/><br><br>
+	</div>
+	
+		
+	<h1><a class="btn btn-secondary" style="width: 600px; font-size:20px;background-color:darkgray">DEPARTMENTS OF GOVERNMENT</h1></center></a><br>
+	<body><center>
+		<div id="watermark0">
+  			<img src="static\img\bg.jpg"  style=" height: 1550px; width: 1450px;opacity: 1;"/>
+	</div>
+			<div id="watermark">
+  			<img src="static\img\ke.jpg"  style="height: 600px; width: 600px;opacity: 0.5;"/><br><br>
+	</div>
+	<div id="watermark1">
+  			<img src="static\img\sc1.jpg"  style=" height: 255px; width: 377px;opacity: 1;"/>
+	</div>
+	<div id="watermark2">
+  			<img src="static\img\mp.jpg"  style=" height: 255px; width: 377px;opacity: 1;"/>
+	</div>
+	<div id="watermark3">
+  			<img src="static\img\vs.jpg"  style=" height: 200px; width: 500px;opacity: 1;"/>
+	</div>
+	<div id="watermark4">
+  			<img src="static\img\hc.jpg"  style=" height: 200px; width: 500px;opacity: 1;"/>
+	</div>
+	<!--<div id="watermark5">
+  			<img src="static\img\gk.jpg"  style=" height: 200px; width: 300px;opacity: 1;"/>
+	</div>-->
+
+
+		{% for dm in dept_names %}
+			<br><a href="{%url 'sub_departments' dm.id %}" class="btn btn-primary" style="width: 500px">{{dm.d_name}}</a><br>
+		{% endfor %}
+
+	</center>
+	<div style="margin-top: -475px; margin-left: 25px">
+		<div style= "color:white">
+			<a class="btn btn-danger" style="width: 260px;">Tenders</a><br>		
+		</div>
+		<div id="" style="overflow-y: scroll; height: 400px; background: lightgray;width: 260px;">
+			{% for i in tender_names %}
+				<a ><b>{{ i }}</b></a><br><b>*</b>
+				<small style="text-muted d-block;padding-left: 0.5em"> {{ i.D_Id }}</small><br>
+				<a style="text-muted d-block;padding-left: 0.6em"> <b>></b></a>
+				<small style="text-muted d-block;padding-left: 0.2em"> {{ i.Sub_Id }}</small><br>
+				<a >____________________________________</a>
+			{% endfor %}
+		</div>
+			
+	</div>
+
+	<div style="margin-top: -445px; margin-left: 1100px">
+		<div style= "color: white">
+			<a class="btn btn-danger" style="width: 260px;">Complaints</a><br>		
+		</div>
+		<div id="" style="overflow-y: scroll; height: 400px; background: lightgray;width: 260px;">
+			{% for i in compl %}
+				
+				<a style="padding-left: 0.5em"><b> {{ i.compl_name }}</b></a><br>
+				<a style="text-muted d-block;padding-left: 0.6em"> <b>></b></a>
+				<small style="text-muted d-block;padding-left: 0.2em"> {{ i.compl_description }}</small><br>
+				<a >_____________________________________</a>
+			{% endfor %}
+		</div>
+		<a href="{%url 'complaints' %}" class="btn btn-info" style="width: 260px;color: white"> add complaint</a>
+	</div>
+
+	</body>
+{% endblock %}
+
+
+
+</html>

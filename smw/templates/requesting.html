@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}PLEASE ENTER THESE REQUIRED DETAILS{% endblock %}
+
+
+{% block content %}
+<br><br>
+<div class="row justify-content-center" >     
+   		<div class="col-lg-5 col-md-6 col-sm-8">   
+   		    <div class="card">    
+   		         <div class="card-body">       
+   		             <h3 class="card-title">Enter the company register number:</h3>   
+   		                     <form method="post" novalidate>
+								 {% csrf_token %} 
+	<div class="form-group">
+		<label for="company_reg_no"></label>
+		<input type="text" class="form-control" id="id_company_reg_no" name="company_reg_no"><br>
+		<center><button type="submit" class="btn btn-success">SUBMIT</button>
+	</div>
+		</div> 
+    </div>
+	</div> 
+    </div>
+	
+
+</form>
+{% endblock %}

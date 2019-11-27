@@ -1,0 +1,4 @@
+IT206,Paradigms Of Programming-I,4,III,1,100003,elective,
+IT301,Database Systems,4,V,1,100003,core,
+IT302,Web Technologies And Applications,4,V,1,100004,core,
+

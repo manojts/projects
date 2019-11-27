@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+	<li class="breadcrumb-items active">Ware-house Details</li>
+{% endblock %}
+{% block content %}
+<br><br><h2><b><center>Ware-house Locations</center></b></h2>
+<center>
+{%for ware in ware_det %}
+	<br><a href="#" class="btn btn-primary" style="width: 500px">{{ware.ware_place}}</a><br>
+{% endfor %}
+
+{% endblock %}

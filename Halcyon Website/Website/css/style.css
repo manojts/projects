@@ -1,0 +1,211 @@
+body {
+	overflow-x: hidden;
+}
+
+a {
+	color: currentColor !important;
+	text-decoration: none !important;
+}
+a:link {
+	text-decoration: none !important;
+	color: currentColor !important;
+}
+
+a:visited {
+	text-decoration: none !important;
+}
+.navbar .nav-link {
+	font-size: 14px;
+	text-transform: uppercase;
+	padding-left: 1rem !important;
+	padding-right: 1rem !important;
+}
+
+.navbar .nav-item.active {
+	border-bottom: #444 1.5px solid;
+}
+
+.carousel-item {
+	min-height: 100vh;
+	color: rgb(134, 144, 146);
+}
+
+.mb-5,
+.my-5 {
+	margin-bottom: 12rem !important;
+}
+
+.carousel-image-1 {
+	background: url('../img/theater.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.carousel-image-2 {
+	background: url('../img/lit.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.carousel-image-3 {
+	background: url('../img/music.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.carousel-image-4 {
+	background: url('../img/art.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.carousel-image-5 {
+	background: url('../img/dance.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.carousel-image-6 {
+	background: url('../img/gaming.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.carousel-image-7 {
+	background: url('../img/informal.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#home-icons {
+	min-height: 50vh;
+	background-color: #000;
+	color: white;
+}
+
+#home-heading {
+	position: relative;
+	min-height: 100vh;
+	background: url('../img/home-header.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: #fff;
+}
+
+#home-heading-about {
+	position: relative;
+	min-height: 100vh;
+	background: url('../img/sit.jpeg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: #fff;
+}
+
+.dark-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#video-play a {
+	color: #fff;
+}
+
+#about {
+	min-height: 100vh;
+}
+.about-img {
+	margin-top: -50px;
+}
+
+#faq .card {
+	border: #444;
+}
+
+#faq a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#faq .card-body,
+#faq .card-header {
+	background: #333;
+}
+
+#main-footer {
+	background: #000;
+	color: #fff;
+}
+
+#icon-boxes {
+	min-height: 100vh;
+}
+
+.bg-dark {
+	background-color: rgb(0, 0, 0);
+	color: #fff;
+}
+
+.navbar-dark {
+	background-color: rgb(0, 0, 0) !important;
+	color: #fff;
+}
+
+.active {
+	border-color: white;
+}
+
+#head-title {
+	margin: auto;
+	font-size: 7em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke: 2px cyan;
+	text-shadow: 5px 10px #2E2EFE;
+	font-style: italic;
+	word-break: break-all;
+}
+
+#dates {
+	margin: auto;
+	font-size: 3em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke: 2px cyan;
+	text-shadow: 2px 5px #2E2EFE;
+	font-style: italic;
+}
+
+#fest {
+	margin: auto;
+	font-size: 3em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke: 2px cyan;
+	text-shadow: 2px 5px #2E2EFE;
+	font-style: italic;
+}
+
+#sit {
+	font-size: 7em;
+	font-weight: 600;
+	text-shadow: 1px 3px 0 rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 600px) {
+	#sit {
+		font-size: 3em;
+	}
+}

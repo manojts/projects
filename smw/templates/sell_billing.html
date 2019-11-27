@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SMW</title>
+</head>
+
+	{% block content %}
+<body>
+	<br><br><br>
+	<center><h1>PROCURE BILL</h1> </centre>
+	<center><div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+   		         	<table>
+	<b>Customer Name</b>: {{ cust.cust_name }}    <br>
+	<b>Mobile</b>       : {{cust.cust_number}}	<br><br>
+	<b>Total amount     :</b>{{ tot }}
+</table>
+</tbody>
+<table>
+
+</div> </div> </div> </div></center> <br>
+	
+
+<a href="{%url 'truck_home' pk_t%}" button class="btn btn-danger" >Home</a>
+</body>
+{% endblock %}
+</html>

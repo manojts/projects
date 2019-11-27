@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+	<li class="breadcrumb-items active">Ware-house Details</li>
+{% endblock %}
+{% block content %}
+<br><br><h2><b><center>Truck Lists</center></b></h2>
+<center>
+{%for truc in truck_det %}
+	<br><a href="#" class="btn btn-primary" style="width: 500px">{{truc.truck_number}}</a><br>
+{% endfor %}
+
+{% endblock %}

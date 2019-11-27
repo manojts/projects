@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Procure List Login </title>
+	
+</head>
+<body>
+{% block content %}
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<center><h1>Customer Login</h1> </centre>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+		<label for='id_m_number'>Mobile Number</label>
+		<input type='text' class='form-control' id='id_m_number' name='m_number'>
+	</div>
+	
+	<div class='form-group'>
+		<label for="id_c_name">Customer Name</label>
+		<input type="text" class="form-control" id="id_c_name" name="c_name">
+	</div>
+
+	<center><button type="submit" class="btn btn-success">Enter</button></center>
+	</form>
+	<br><br><br>
+	<center><a href="{%url 'truck_home' pk_t%}" button class="btn btn-danger" >Home</a>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
+</body>
+</html>

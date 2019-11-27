@@ -1,0 +1,73 @@
+	{% extends 'base.html' %}
+{% load static %}
+<html>
+
+{% block breadcrumb %}
+<li class="breadcrumb-items active">Departments</li>
+{% endblock %}
+<style type="text/css">
+
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 00px;
+  margin: 0;
+  z-index: -1;
+  left:465px;
+  top:00px;
+}
+
+</style>
+
+
+{% block content %}
+	<head>
+		<h1 style="color:#bec22f;"><center><b>SHOPPING MART</b></center></h1>
+		
+<style type="text/css">
+
+</style>
+
+		
+	</head><br>
+	<center>
+		
+		<div>
+  			<img src="static\img\cart.jpg"  style="height: 100px; width: 100px;"/><br><br>
+	</div>
+	
+		
+	<body><center>
+		
+    <a href="{%url 'ware_house_login' %}" class="btn btn-primary" style="width: 300px; font-size:20px;background-color:blue; 
+    "><div>
+  			<img src="static\img\ware_house.jpg"  style="height: 100px; width: 100px;"/>
+	</div>Ware-house Login</h1></a><br><br>
+
+    <a href="{%url 'truck_login' %}" class="btn btn-primary" style="width: 300px; font-size:20px;background-color:blue"><div>
+  			<img src="static\img\truck.jpg"  style="height: 100px; width: 100px;"/>
+	</div>Truck Login</h1></a><br>
+
+	<!--<div id="watermark5">
+  			<img src="static\img\gk.jpg"  style=" height: 200px; width: 300px;opacity: 1;"/>
+	</div>-->
+
+
+		
+
+	</center>
+	
+			
+	</div>
+
+	
+	</body>
+{% endblock %}
+
+
+
+</html>

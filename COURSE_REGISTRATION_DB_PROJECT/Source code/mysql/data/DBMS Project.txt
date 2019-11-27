@@ -1,0 +1,466 @@
+DBMS Project
+___________________________________________________________________________________________________________________
+
+create database course_reg;
+
+mysql> create database course_reg;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use course_reg;
+Database changed
+
+create table STUDENTS (
+RollNo int Primary Key ,
+FirstName varchar(25) not null,
+MidInit    char null,
+LastName varchar(25) not null,
+Gender varchar(1) null,
+Dob date null,
+Address varchar(200) null,
+YearEnrolled varchar(4) not null,
+DeptNo int(5) null,
+Semester int(2)	null 
+);
+
+insert into students values('136396','John','B','Smith','M','1965-01-09','123 5th Cross Street CA','2013','001','5');
+
+
+mysql> create table STUDENTS (
+    -> RollNo int Primary Key ,
+    -> FirstName varchar(25) not null,
+    -> MidInit    char null,
+    -> LastName varchar(25) not null,
+    -> Gender varchar(1) null,
+    -> Dob date null,
+    -> Address varchar(200) null,
+    -> YearEnrolled varchar(4) not null,
+    -> DeptNo int(5) null,
+    -> Semester int(2)null
+    -> );
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> insert into students values('136396','John','B','Smith','M','1965-01-09','123 5th Cross Street CA','2013','001','5');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from students;
++--------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+----------+
+| RollNo | FirstName | MidInit | LastName | Gender | Dob        | Address                 | YearEnrolled | DeptNo | Semester |
++--------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+----------+
+| 136396 | John      | B       | Smith    | M      | 1965-01-09 | 123 5th Cross Street CA | 2013         |      1 |        5 |
++--------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+----------+
+1 row in set (0.00 sec)
+
+
+
+create table Departments
+(
+DeptNo      int primary key,
+DeptName        varchar(50) not null,
+HODId       integer(9) not null
+);
+
+insert into Departments values('1','Information Technology','100001');
+
+mysql> create table Departments
+    -> (
+    -> DeptNo      int primary key,
+    -> DeptName        varchar(25) not null,
+    -> HODId       integer(9) not null
+    -> );
+Query OK, 0 rows affected (1.05 sec)
+
+mysql> insert into Departments values('1','Information Technology','100001');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from departments;
++--------+------------------------+--------+
+| DeptNo | DeptName               | HODId  |
++--------+------------------------+--------+
+|      1 | Information Technology | 100001 |
++--------+------------------------+--------+
+1 row in set (0.00 sec)
+
+
+Create table Courses (
+CourseCode varchar(9) primary key,
+CourseName varchar(50),
+Credits int not null,
+Semester varchar(15) ,
+DeptNo integer(9) not null,
+InstructorID integer(9) not null
+);
+
+insert into courses values('IT200','Data Structures and Algorithms','3','III','1','100009');
+
+mysql> Create table Courses (
+    -> CourseCode varchar(9) primary key,
+    -> CourseName varchar(50),
+    -> Credits int not null,
+    -> Semester varchar(15) ,
+    -> DeptNo integer(9) not null,
+    -> InstructorID integer(9) not null
+    -> );
+Query OK, 0 rows affected (0.25 sec)
+
+mysql> insert into courses values('IT200','Data Structures and Algorithms','3','III','1','100009');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from courses;
++------------+--------------------------------+---------+----------+--------+--------------+
+| CourseCode | CourseName                     | Credits | Semester | DeptNo | InstructorID |
++------------+--------------------------------+---------+----------+--------+--------------+
+| IT200      | Data Structures and Algorithms |       3 | III      |      1 |       100009 |
++------------+--------------------------------+---------+----------+--------+--------------+
+1 row in set (0.00 sec)
+
+
+Create table Instructors(
+InstructorId int Primary Key ,
+FirstName varchar(30) not null,
+MidInit    char null,
+LastName varchar(30) not null,
+Gender varchar(1) not null,
+DOB date not null,
+Address varchar(200) null,
+YearEnrolled varchar(4) not null,
+DeptNo int(2) null
+);
+
+insert into instructors values('100001','Mark','H','Wahlburg','M','1955-01-09','444 3rd Cross Street CA','2002','1');
+
+mysql> Create table Instructors(
+    -> InstructorId int Primary Key ,
+    -> FirstName varchar(30) not null,
+    -> MidInit    char null,
+    -> LastName varchar(30) not null,
+    -> Gender varchar(1) not null,
+    -> DOB date not null,
+    -> Address varchar(200) null,
+    -> YearEnrolled varchar(4) not null,
+    -> DeptNo int(2) null
+    -> );
+Query OK, 0 rows affected (0.39 sec)
+
+mysql> insert into instructors values('100001','Mark','H','Wahlburg','M','1955-01-09','444 3rd Cross Street CA','2002','1');
+Query OK, 1 row affected (0.08 sec)
+
+insert into instructors values('100009','Matt','B','Damon','M','1958-01-09','224 8th Cross Street CA','2004','1');
+
+mysql> select * from instructors;
++--------------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+
+| InstructorId | FirstName | MidInit | LastName | Gender | DOB        | Address                 | YearEnrolled | DeptNo |
++--------------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+
+|       100001 | Mark      | H       | Wahlburg | M      | 1955-01-09 | 444 3rd Cross Street CA | 2002         |      1 |
++--------------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+
+1 row in set (0.00 sec)
+
+create table Admin(
+UserName int Primary Key ,
+FirstName varchar(25) not null,
+MidInit    char null,
+LastName varchar(25) not null,
+Password varchar(25) not null
+);
+
+insert into admin values('136396','John','B','Smith','password_95');
+
+mysql> create table Admin(
+    -> UserName int Primary Key ,
+    -> FirstName varchar(25) not null,
+    -> MidInit    char null,
+    -> LastName varchar(25) not null,
+    -> Password varchar(25) not null
+    -> );
+Query OK, 0 rows affected (0.27 sec)
+
+mysql>
+mysql> insert into admin values('136396','John','B','Smith','password_95');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from admin;
++----------+-----------+---------+----------+-------------+
+| UserName | FirstName | MidInit | LastName | Password    |
++----------+-----------+---------+----------+-------------+
+|   136396 | John      | B       | Smith    | password_95 |
++----------+-----------+---------+----------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from admin;
++--------+-----------+---------+----------+-------------+
+| RollNo | FirstName | MidInit | LastName | Password    |
++--------+-----------+---------+----------+-------------+
+| 136396 | John      | B       | Smith    | password_95 |
++--------+-----------+---------+----------+-------------+
+1 row in set (0.00 sec)
+
+create table Fees(
+ReceiptNo integer(9) not null ,
+RollNo integer(9) not null,
+Bank varchar(25) not null,
+Date date null,
+primary key (ReceiptNo, RollNo)
+);
+
+insert into fees values('84000','136396','SBI','2015-07-15');
+
+mysql> create table Fees(
+    -> ReceiptNo integer(9) not null ,
+    -> RollNo integer(9) not null,
+    -> Bank varchar(25) not null,
+    -> Date date null,
+    -> primary key (ReceiptNo, RollNo)
+    -> );
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> insert into fees values('84000','136396','SBI','2015-07-15');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from fees;
++-----------+--------+------+------------+
+| ReceiptNo | RollNo | Bank | Date       |
++-----------+--------+------+------------+
+|     84000 | 136396 | SBI  | 2015-07-15 |
++-----------+--------+------+------------+
+1 row in set (0.00 sec)
+
+
+
+create table Enrolled_On(
+RollNo int Primary Key ,
+CourseCode varchar(9) not null,
+Audit boolean
+);
+
+insert into Enrolled_On values('136396','IT200','1');
+
+mysql> insert into Enrolled_On values('136396','IT200','1');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from enrolled_on;
++--------+------------+-------+
+| RollNo | CourseCode | Audit |
++--------+------------+-------+
+| 136396 | IT200      |     1 |
++--------+------------+-------+
+1 row in set (0.00 sec)
+
+alter table courses add CourseType varchar(9);
+
+update courses set coursetype='Core' where coursecode='IT200';
+
+
+mysql> update courses set coursetype='Core' where coursecode='IT200';
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from courses;
++------------+--------------------------------+---------+----------+--------+--------------+------------+
+| CourseCode | CourseName                     | Credits | Semester | DeptNo | InstructorID | CourseType |
++------------+--------------------------------+---------+----------+--------+--------------+------------+
+| IT200      | Data Structures and Algorithms |       3 | III      |      1 |       100009 | Core       |
++------------+--------------------------------+---------+----------+--------+--------------+------------+
+1 row in set (0.00 sec)
+
+
+Foregin Keys:
+
+1) ALTER TABLE Students ADD ( FOREIGN KEY (DeptNo) REFERENCES Departments(DeptNo));
+
+mysql> ALTER TABLE Students ADD ( FOREIGN KEY (DeptNo) REFERENCES Departments(DeptNo));
+Query OK, 1 row affected (0.64 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+2) ALTER TABLE Instructors ADD ( FOREIGN KEY (DeptNo) REFERENCES Departments(DeptNo));
+mysql> ALTER TABLE Instructors ADD ( FOREIGN KEY (DeptNo) REFERENCES Departments(DeptNo));
+Query OK, 1 row affected (0.55 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+3) ALTER TABLE Courses ADD ( FOREIGN KEY (DeptNo) REFERENCES Departments(DeptNo));
+
+mysql> ALTER TABLE Courses ADD ( FOREIGN KEY (DeptNo) REFERENCES Departments(DeptNo));
+Query OK, 1 row affected (0.61 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+4) ALTER TABLE Courses ADD ( FOREIGN KEY (InstructorID) REFERENCES Instructors(InstructorID));
+
+mysql> insert into instructors values('100009','Matt','B','Damon','M','1958-01-09','224 8th Cross Street CA','2004','1');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from instructors;
++--------------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+
+| InstructorId | FirstName | MidInit | LastName | Gender | DOB        | Address                 | YearEnrolled | DeptNo |
++--------------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+
+|       100001 | Mark      | H       | Wahlburg | M      | 1955-01-09 | 444 3rd Cross Street CA | 2002         |      1 |
+|       100009 | Matt      | B       | Damon    | M      | 1958-01-09 | 224 8th Cross Street CA | 2004         |      1 |
++--------------+-----------+---------+----------+--------+------------+-------------------------+--------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE Courses ADD ( FOREIGN KEY (InstructorID) REFERENCES Instructors(InstructorID));
+Query OK, 1 row affected (0.72 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+5) ALTER TABLE Admin ADD ( FOREIGN KEY (UserName) REFERENCES Students(RollNo));
+mysql> ALTER TABLE Admin ADD ( FOREIGN KEY (UserName) REFERENCES Students(RollNo));
+Query OK, 1 row affected (0.64 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+6)
+ ALTER TABLE Fees ADD ( FOREIGN KEY (RollNo) REFERENCES Students(RollNo));
+
+ mysql> ALTER TABLE Fees ADD ( FOREIGN KEY (RollNo) REFERENCES Students(RollNo));
+Query OK, 1 row affected (0.72 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+7)
+ALTER TABLE Enrolled_On ADD ( FOREIGN KEY (RollNo) REFERENCES Students(RollNo));
+mysql> ALTER TABLE Enrolled_On ADD ( FOREIGN KEY (RollNo) REFERENCES Students(RollNo));
+Query OK, 1 row affected (0.81 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+8)
+
+ALTER TABLE Enrolled_On ADD ( FOREIGN KEY (CourseCode) REFERENCES Courses(CourseCode));
+
+mysql> ALTER TABLE Enrolled_On ADD ( FOREIGN KEY (CourseCode) REFERENCES Courses(CourseCode));
+Query OK, 1 row affected (0.61 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+9)
+ALTER TABLE Departments ADD ( FOREIGN KEY (HODId) REFERENCES Instructors(InstructorID));
+mysql> ALTER TABLE Departments ADD ( FOREIGN KEY (HODId) REFERENCES Instructors(InstructorID));
+Query OK, 1 row affected (0.66 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+
+insert into students values('136390','Bob','S','Anderson','M','1994-01-09','333 8th Cross Street CA','2013','001','5');
+insert into students values('136395','Lois','P','Griffin','F','1995-01-09','888 2nd Cross Street KA','2014','001','3');
+
+insert into admin values('136390','Bob','S','Anderson','qwertyuiop');
+
+Triggers: 
+1)
+DELIMITER //
+CREATE TRIGGER usernm_insert 
+AFTER INSERT ON students 
+FOR EACH ROW BEGIN 
+INSERT INTO admin (UserName,FirstName,MidInit,LastName,Password)
+values(NEW.RollNo,NEW.FirstName,NEW.MidInit,NEW.LastName,NEW.RollNo);
+END;//
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS usernm_update;
+delete from students where rollno = '136392';
+
+insert into students values('136391','Bill','W','Hader','M','1994-05-11','323 4th Cross Street CA','2013','001','5');
+
+2)
+DROP TRIGGER IF EXISTS usernm_update;
+DELIMITER //
+CREATE TRIGGER usernm_update 
+AFTER UPDATE ON students 
+FOR EACH ROW BEGIN 
+UPDATE admin set UserName = NEW.RollNo,FirstName = NEW.FirstName,MidInit = NEW.MidInit,LastName = NEW.LastName,Password = NEW.RollNo where admin.UserName = OLD.RollNo;
+END;//
+DELIMITER ;
+
+LOAD DATA LOCAL INFILE "instructors.txt" INTO TABLE instructors FIELDS TERMINATED BY ",";
+LOAD DATA LOCAL INFILE "department.txt" INTO TABLE departments FIELDS TERMINATED BY ",";
+
+LOAD DATA LOCAL INFILE "Instructors.txt" INTO TABLE instructors FIELDS TERMINATED BY ",";
+
+
+insert into instructors values('100002','Liz','H','Banks','F','1965-11-13','234 5th Cross Street KA','2006','1');
+insert into instructors values('100003','Steve','L','Caroll','M','1969-03-22','167 3rd Cross Street KL','2004','1');
+insert into instructors values('100004','Sergio','K','Aguero','M','1975-05-23','154 4th Cross Street KA','2008','1');
+insert into Departments values('2','Information Technology','200001');
+
+ALTER TABLE departments
+  DROP FOREIGN KEY Departments;
+
+  ALTER TABLE departments.hodid DROP FOREIGN KEY departments_ibfk_1;
+
+  ALTER TABLE departments CHANGE COLUMN deptname deptname VARCHAR(100);
+
+insert into courses values('IT201','Digital Design And Computer Organization','3','III','1','100009');
+insert into courses values('IT206','Paradigms Of Programming-I','4','III','1','100003','elective');
+insert into courses values('IT301','Database Systems','4','5','1','100003','core');
+insert into courses values('IT302','Web Technologies And Applications','4','5','1','100004','core');
+IT206,Paradigms Of Programming-I,4,5,1,100003,elective,
+IT301,Database Systems,4,5,1,100003,core,
+IT302,Web Technologies And Applications,4,V,1,100004,core,
+
+LOAD DATA LOCAL INFILE "courses.txt" INTO TABLE courses FIELDS TERMINATED BY ",";
+
+
+select * from courses where deptno='1' and semester='3';
+
+<?php
+    if(isset($_POST['formSubmit'])) 
+    {
+        $varCountry = $_POST['formCountry'];
+        $errorMessage = "";
+        
+        if(empty($varCountry)) 
+        {
+            $errorMessage = "<li>You forgot to select a department!</li>";
+        }
+        
+        if($errorMessage != "") 
+        {
+            echo("<p>There was an error with your selection:</p>\n");
+            echo("<ul>" . $errorMessage . "</ul>\n");
+        } 
+        else 
+        {
+            // note that both methods can't be demonstrated at the same time
+            // comment out the method you don't want to demonstrate
+
+            // method 1: switch
+            $redir = "US.html";
+            switch($varCountry)
+            {
+                case "IT": header("Location: coursereg.php"); break;
+                case "CS": header("Location: coursereg.php");break;
+                case "Mech": header("Location: coursereg.php"); break;
+                case "EE": header("Location: coursereg.php"); break;
+                case "EC": header("Location: coursereg.php"); break;
+                case "Civil": header("Location: coursereg.php"); break;
+                default: echo("Error!"); exit(); break;
+            }
+            
+            
+            // header("Location: $redir");
+            // end method 1
+            
+            // method 2: dynamic redirect
+            //header("Location: " . $varCountry . ".html");
+            // end method 2
+
+            exit();
+        }
+    }
+?>
+
+<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+    <label for='formCountry'>Select Department</label><br>
+    <select name="formCountry">
+        <option value="">Select a department</option>
+        <option value="IT">Information tecnology</option>
+        <option value="CS">CS</option>
+        <option value="Mech">Mech</option>
+        <option value="EE">EE</option>
+        <option value="EC">EC</option>
+        <option value="Civil">Civil</option>
+    </select> 
+    <input type="submit" name="formSubmit" value="Submit" />
+</form>
+
+
+Alter table enrolled_on drop column  audit;
+ALTER TABLE enrolled_on.CourseCode DROP FOREIGN KEY enrolled_on_ibfk_1;
+
+SHOW KEYS FROM enrolled_on WHERE Key_name = 'PRIMARY';
+ALTER TABLE enrolled_on DROP PRIMARY KEY;
+alter table enrolled_on add primary key (RollNo,CourseCode);
+
+Link : "<td><a href='reg.php'>$f1</a></td>"

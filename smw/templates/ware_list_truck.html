@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<body>
+	<br><br><br>
+	<center>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-7 col-md-20 col-sm-30">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<center><h4>Truck list</h4> </centre>
+	<table class="table">
+		<thead class="thead-inverse">
+			<tr >
+				
+				<th><center>Truck number</th>
+				<th><center>Driver</th>
+				<th><center>Village 1</th>
+				<th><center>Village 2</th>
+				<th><center>Village 3</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+	{% for truc in w_t_list %}
+		<tr>
+			<td class="align-middle"><center> {{ truc.truck_number }} </td>
+			<td class="align-middle"><center>{{ truc.truck_driver }}</td>
+			<td class="align-middle"><center>{{ truc.truck_village1 }}</td>
+			<td class="align-middle"><center>{{ truc.truck_village2 }}</td>
+			<td class="align-middle"><center>{{ truc.truck_village3 }}</td>
+
+			<br></tr>
+	{% endfor %}
+</tbody>
+<table>
+	<center><a href="{% url 'ware_home' pk%}" button type="submit" class="btn_btn-primary">Home</button></a>
+</center>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}	

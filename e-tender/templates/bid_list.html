@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+	<br>
+	<div class="row justify-content-center" >     
+   		<div class="col-lg-8 col-md-8 col-sm-8">   
+   		    <div class="card">    
+   		         <div class="card-body">
+		{% for bid in bidding_list %}
+		<br>
+	<a style="font-size: 20px;text-align:right"/><b>Name of the Tender:</b> {{ bid.t_name }} <br>
+	<a style=" font-size: 20px;text-align:right"/><b>Department Name:</b>     {{ bid.D_Id.d_name }} <br>
+	<a style=" font-size: 20px;text-align:right"/><b>Sub Department Name:</b> {{ bid.Sub_Id.sub_dept_name }} <br>
+	<br>
+  	<a style="font-size: 20px;text-align:right"/><center><img src="..\..\{{ bid.t_image }}"  style="height: 300px; width: 300px;"/></center><br>
+	<a style=" font-size: 15px;text-align:right"/>{{ bid.t_description }}<br>
+	<a style=" font-size: 20px;text-align:right"/><b>Project Start Date:</b> {{bid.t_start_period}} <br>
+	<a style=" font-size: 20px;text-align:right"/><b>Bidding End Date:</b> {{bid.t_end_date}} <br>
+	<a style=" font-size: 20px;text-align:right"/><b>Budget Price(approx) : </b>Rs. {{bid.t_price}}/-<br>
+	<br>{% if user.username != 'group_13' %} 
+			<center><a href="{% url 'bid_now' bid.id user.username%}" button type="submit" class="btn btn-success">BID NOW</button></a>
+		{% endif %}
+	<br>
+		{% endfor %}
+		<br>
+		<table class="table">
+		<thead class="thead-inverse">
+			<tr >
+				
+				<th><center>Company<br> Name</th>
+				<th><center>Company <br>Reg No.</th>
+				<th><center>Bidding<br> Price</th>
+				<th><center>Bidding <br>Description</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+
+
+		{%for obj in bidding_object %}
+			<tr>
+				{% if obj == bidding_object.first %}
+				<div>
+				<tr style="background-color: lightgray">
+				<td class="align-middle" style="color: darkgreen"><center>{{ obj.c_id.c_name }}</td>
+				<td class="align-middle"style="color: darkgreen"><center>{{ obj.c_id.c_reg_no }}</td>
+				<td class="align-middle" style="color: darkgreen"><center>Rs.{{ obj.b_price }}</td>
+				<td class="align-middle" style="color: darkgreen"><center>{{ obj.b_description }}</td>
+				</tr>
+				</div>
+				{% else %}
+				
+				<td class="align-middle"><center>{{ obj.c_id.c_name }}</td>
+				<td class="align-middle"><center>{{ obj.c_id.c_reg_no }}</td>
+				<td class="align-middle"><center>Rs.{{ obj.b_price }}</td>
+				<td class="align-middle"><center>{{ obj.b_description }}</td>
+				{% endif %}
+			</tr>
+			{% endfor %}
+			
+		</tbody>
+
+	</table>
+			
+</div>
+</div>
+</div>
+</div>
+		
+		
+		
+			
+		</body>
+
+	{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends 'home.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<style type="text/css">
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:0px;
+  top:0px;
+}
+</style>
+	
+		<center>
+			<br>
+			
+		<body>
+		
+		<center><a class="btn btn-secondary" style="width:auto;background-color:darkgray"><h2>SUB-DEPARTMENTS OF {{single_dept.d_name}}</h2></center></a><br>
+		<div id="watermark">
+  			<img src={{single_dept.d_image}}  style="opacity: 1;"/><br><br>
+		</div>
+		{%for sub in sub_depts %}
+			<center><a  href="{% url 'tenders' sub.id%}" class="btn btn-primary" style="width:500px">{{sub.sub_dept_name}}</a></center><br>
+		{% endfor %}
+			
+		</body>
+
+	{% endblock %}

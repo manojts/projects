@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SMW</title>
+</head>
+
+	{% block content %}
+<body>
+	<br><br><br>
+	<center><h1>PROCURE BILL</h1> </centre>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<b>Customer Name</b>: {{ cust.cust_name }}    <br><b>Mobile</b>: {{cust.cust_number}}
+	<table class="table">
+		<thead class="thead-inverse">
+			<tr >
+				
+				<th><center>Item name</th>
+				<th><center>Quantity</th>
+				<th><center>Unit price</th>
+				<th><center>Total price</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+	{% for i in v_list %}
+		<tr>
+			<td class="align-middle"><center> {{ i.proc_item }} </td>
+			<td class="align-middle"><center>{{ i.proc_quantity }}</td>
+			<td class="align-middle"><center>Rs.{{ i.proc_item_price }}</td>
+			<td class="align-middle"><center>Rs.{{ i.proc_total_price }}</td>
+			<br></tr>
+	{% endfor %}
+</tbody>
+<table>
+</center>
+</div>
+</div>
+</div>
+</div>
+<br>
+	<b>Total amount :</b>{{ total.proc_total_price__sum }}<br><br>
+
+<a href="{%url 'truck_home' pk_t%}" button class="btn btn-danger" >Home</a>
+</body>
+{% endblock %}
+</html>

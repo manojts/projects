@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Bid for the Development of our State{% endblock %}
+{% block breadcrumb %}
+	<li class='breadcrumb-item'><a href='{%url "home" %}'>Departments</a></li>
+	<!--<li class='breadcrumb-item'><a href='{%url "sub_dept_list.html"  %}'>Departments</a></li>
+	<li class='breadcrumb-item'><a href='{%url "board_topics" board.pk %}'>{{board.name}}</a></li>-->
+	<li class="breadcrumb-item activate">BID</li>
+{% endblock %}
+{% block content %}
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<div class="row justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+		<label for='id_b_price'>Bidding price</label>
+		<input type='float' class='form-control' id='id_b_brice' name='bidding_price'>
+	</div>
+	<div class='form-group'>
+		<label for="id_b_description">Bidding Discription</label>
+		<textarea class="form-control" id="id_b_description" name="bidding_description" rows="5"></textarea>
+	</div>
+	<center><button type="submit" class="btn btn-success">Post</button>
+	</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

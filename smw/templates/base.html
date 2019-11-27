@@ -1,0 +1,58 @@
+{% load static %}<!DOCTYPEhtml>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<title>{% block title %}smw{% endblock %}</title>
+				<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+				{% block stylesheet %}{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+		<nav class="navbar navbar-expand-sm navbar-dark " style="background-color:#343a40;text-align:center;">
+		<!--nav style="background-color:white;color : red;"-->
+	    <div class="container" style="height: 70px;">
+	    	<a class="navbar-brand" href=" # "style=" font-size: 35px;width:800px;text-align:right"><b>BARTER-MARKET ON-WHEELS</b></a>
+	    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	
+			<style type="text/css">
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:465px;
+  top:400px;
+}
+</style>
+			
+			
+			
+	    		
+	    		
+	    	</div>
+	    </div>
+		</nav>
+	
+		{% block content %}
+		<center>
+		<div id="watermark">
+  			<img src="..\..\static\img\cart.jpg"  style=" height: 1550px; width: 1450px;opacity: 1;"/>
+	</div>
+		{% endblock %}	
+
+		
+		</div>
+	{% endblock body%}
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	</body>
+<br>
+</html>

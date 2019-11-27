@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+<li class="breadcrumb-items active">Tender Details</li>
+{% endblock %}
+
+<br><h2><b><center>Tender Details</center></b></h2>
+
+{% block content %}
+<style type="text/css">
+#watermark {
+  color: #d0d0d0;
+  font-size: 200pt;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  z-index: -1;
+  left:0px;
+  top:0px;
+}
+</style>
+<div id="watermark">
+  			<img src="..\..\static\img\cbft.jpg"  style=" opacity: 1;"/><br><br>
+		</div>
+	<table class="table">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Tender no.</th>
+				<th>Tender name</th>
+				<center><th>Tender Details</th></center>
+				<th>Date & Time</th>
+				<th>Price</th>
+				<th>Bid</th>
+			</tr>
+		</thead>
+		<tbody>
+		{%for tend in tenders_list %}
+			<tr>
+				<td class="align-middle"><center>{{ tend.id }}</center></td>
+				<td class="align-top">{{ tend.t_name }}<br>Dept name: {{ tend.D_Id.d_name }}<br>Sub Dept: {{ tend.Sub_Id.sub_dept_name }}</td>
+				<td class="align-top"><center><img src="..\..\{{ tend.t_image }}" style="height: 50px; width: 50px;"/><br></center><small style="text-muted d-block">{{ tend.t_description }}</small></td>
+				<td class="align-top">Bidding End Date: {{ tend.t_end_date }}<br>Project Start date: {{ tend.t_start_period }} </td>
+				<td class="align-middle">Rs.{{ tend.t_price }}</td>
+				{% if user.username != '' %}
+				<td class="align-middle"><a href="{% url 'bid' tend.id%}" class="btn btn-primary ml-2">BID
+				{% endif %}
+				</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% endblock %}

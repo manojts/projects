@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ware-house Login</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+	<style>
+	 {
+				background-color: #dfd6ff;
+         }
+         
+			div {background-color: #dfd6ff;}
+						center {background-color: #dfd6ff;}
+
+	.row_justify-content-center {position:relative;top:50px;left:400px;border-color:black;border-width: 3px;}
+	.form-control {background-color: #f1edff;}
+	h1 {position :relative;top:5px;left:485px;font-family: "cursive", cursive, cursive;font-weight: 900;}
+	</style> 
+</head>
+<center>
+<body>
+
+{% block content %}
+	<form method='POST'>
+	{% csrf_token %}
+	<br><center>
+	<center><h1>Ware-house Login</h1> </center>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+		<label for='id_w_place'>Ware-house Location</label>
+		<input type='text' class='form-control' id='id_w_place' name='w_place'>
+	</div>
+	
+	<div class='form-group'>
+		<label for="id_w_password">Password</label>
+		<input type="Password" class="form-control" id="id_w_password" name="w_password">
+	</div>
+
+	<center><button type="submit" class="btn btn-success">Login</button></center>
+	</form>
+	<br><br><br>
+	<center><a href="{%url 'home' %}" button class="btn btn-danger" >Home</a>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
+</body>
+</html>
